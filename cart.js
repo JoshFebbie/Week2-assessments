@@ -70,16 +70,16 @@ console.log("The total price of all items is " + formattedTotal)
 //CODE HERE
 
 const calcFinalPrice = (cartTotal, couponValue, tax) => {
-  const totalWithTax = cartTotal * (1 + tax);
-  const finalPrice = totalWithTax - couponValue;
-  return finalPrice;
+  const totalWithTax = cartTotal * (1 + tax)
+  const finalPrice = totalWithTax - couponValue
+  return finalPrice
   }
 
-const discountPrice = cart.reduce((acc, cur) => acc + cur.price, 0);
-const couponValue = 5.00;
-const tax = 0.06;
+const discountPrice = cart.reduce((acc, cur) => acc + cur.price, 0)
+const couponValue = 5.00
+const tax = 0.06
 
-const finalPrice = calcFinalPrice(totalPrice, couponValue, tax);
+const finalPrice = calcFinalPrice(totalPrice, couponValue, tax)
 
 console.log("The new total price after coupon is applied is " + finalPrice.toLocaleString('en-US', {style: 'currency', currency: 'USD'}))
 
@@ -105,7 +105,7 @@ console.log("The new total price after coupon is applied is " + finalPrice.toLoc
 */
 
 /*
-firstName - type string: "Businesses rely on clientel names for reference and service, and a string can store names which constist of letters."
+firstName - type string: "Businesses rely on clientel names for reference and service, and a string can store names which consist of letters."
 
 lastName - type string: "Businesses rely on clientel names for reference and service, and a string can store names which consist of letters."
 

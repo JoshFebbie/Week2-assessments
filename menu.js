@@ -84,7 +84,8 @@ console.log(price)
     Print the value of your category variable. 
 */
 
-//CODE HERE
+const {category} = pizza
+console.log(category)
 
 
 //////////////////PROBLEM 3////////////////////
@@ -101,6 +102,48 @@ console.log(price)
 
 //CODE HERE
 
+const foodArr = [
+ {
+    name: "Strawberry Cheesecake",
+    price: 8,
+    category: "dessert",
+    popularity: 10,
+    rating: 9,
+    tags: ["classic", "sweet", "creamy"]
+    },
+    {
+    name: "Pierogi",
+    price: 12,
+    category: "entree",
+    popularity: 5,
+    rating: 9,
+    tags: ["ethnic", "simple", "filling"]
+    },
+    {
+    name: "Apple",
+    price: 9,
+    category: "fruit",
+    popularity: 6,
+    rating: 7,
+    tags: ["healthy", "crisp", "vegetarian"]
+    },
+    {
+    name: "Chicken Alfredo",
+    price: 13,
+    category: "entree",
+    popularity: 7,
+    rating: 8,
+    tags: ["pasta", "creamy", "chicken"]
+    },
+    {
+    name: "Bananas",
+    price: 18,
+    category: "fruit",
+    popularity: 8,
+    rating: 8,
+    tags: ["healthy", "simple", "vegetarian"]
+    }
+]
 
 
 //////////////////PROBLEM 4////////////////////
@@ -117,7 +160,13 @@ console.log(price)
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+function filterByTag(tag) {
+    return foodArr.filter((food) => food.tags.includes(tag));
+  }
+
+const vegetarianFoods = filterByTag("vegetarian");
+console.log(vegetarianFoods);
+
 
 
 
@@ -162,6 +211,19 @@ console.log(price)
 
 //CODE HERE
 
+const filterByProperty = (property, number, type) => {
+    let filteredArray = []
+  
+    if (type === 'above') {
+      filteredArray = foodArr.filter((food) => food[property] > number)
+    } else if (type === 'below') {
+      filteredArray = foodArr.filter((food) => food[property] < number)
+    }
+  
+    return filteredArray
+  }
+
+
 
 /*
     Invoke the `filterByProperty` function passing
@@ -171,3 +233,7 @@ console.log(price)
 */
 
 //CODE HERE
+
+console.log(filterByProperty('price', 8, 'below'))
+console.log(filterByProperty('popularity', 6, 'below'))
+console.log(filterByProperty('price', 10, 'above'))
